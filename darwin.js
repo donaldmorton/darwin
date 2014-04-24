@@ -86,9 +86,8 @@ darwin.directive('jumbotron',function(){
 darwin.directive('well',function(){
 	return {
 		restrict:'E',
-		link: function(scope,element){
-			element.addClass('well');
-		}
+		transclude:true,
+		template:'<div class="well" ng-transclude></div>'
 	}
 });
 
@@ -207,14 +206,19 @@ darwin.directive('listGroup',function(){
 	}
 });
 
+
 darwin.directive('alert',function(){
-	return{
+	return {
 		restrict:'E',
 		scope:{
-			scream:'@'
+			type:'@'
 		},
-		link: function(attrs){
-			alert(attrs.scream);
+		template:'<div></div>',
+		link: function(scope,element,attrs){
+			element.addClass('alert');
+			if(attrs.type){
+				element.children().addClass('alert-'+attrs.type);
+			}
 		}
 	}
 });
