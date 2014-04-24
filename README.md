@@ -13,8 +13,8 @@ Installation
 
 Requirements
 ---------------------------------------
-*AngularJS
-*Bootstrap
+* AngularJS
+* Bootstrap
 
 
 Setup
