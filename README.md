@@ -203,7 +203,9 @@ Instead of
 ```
 <input-group>
     <input type="text" class="form-control">
-    <addon-button>GO</addon-button>
+    <addon-button>
+        <button class="btn btn-default" type="button">Go!</button>
+    </addon-button>
 </input-group>
 ```
 Instead of
