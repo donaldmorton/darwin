@@ -59,7 +59,7 @@ Instead of
 ```
 
 
-----------
+
 **Row**
 ---------------------------------------
 ```
@@ -69,12 +69,12 @@ Instead of
 ```
 <div class="row"></div>
 ```
-----------
+
 **Columns**
 ---------------------------------------
-@type
-@size
-@offset (optional)
+* @type
+* @size
+* @offset (optional)
 ```
 <cl type="md" size="2"></cl>
 ```
@@ -91,12 +91,12 @@ Instead of
 ```
 <div class="col-md-2 col-md-offset-2"></div>
 ```
-----------
+
 **Panel**
 ---------------------------------------
-@title  (optional)
-@footer (optional)
-@type (optional)
+* @title  (optional)
+* @footer (optional)
+* @type (optional)
 
 ```
 <panel>Content</panel>
@@ -118,7 +118,7 @@ Instead of
     <div class="panel-footer">foo</div>
 </div>
 ```
-----------
+
 **Jumbotron**
 ---------------------------------------
 ```
@@ -128,7 +128,7 @@ Instead of
 ```
 <div class="jumbotron"></div>
 ```
-----------
+
 
 **Well**
 ---------------------------------------
@@ -139,12 +139,11 @@ Instead of
 ```
 <div class="well"></div>
 ```
-----------
 
 
 **Label**
 ---------------------------------------
-@type
+* @type
 ```
 <lbl type="primary"></lbl>
 ```
@@ -152,7 +151,7 @@ Instead of
 ```
 <span class="label label-primary"></span>
 ```
-----------
+
 **List Group**
 ---------------------------------------
 ```
@@ -170,7 +169,6 @@ Instead of
   <li class="list-group-item">Morbi leo risus</li>
 </ul>
 ```
-----------
 
 **Icon**
 ---------------------------------------
@@ -181,7 +179,7 @@ Instead of
 ```
 <span class="glyphicon glyphicon-star"></span>
 ```
-----------
+
 
 **Input Group**
 ---------------------------------------
@@ -198,7 +196,6 @@ Instead of
   <input type="text" class="form-control">
 </div>
 ```
-----------
 
 
 **Input Group Button**
@@ -218,7 +215,7 @@ Instead of
     </span>
 </div>
 ```
-----------
+
 **Button Group**
 ---------------------------------------
 ```
@@ -234,7 +231,7 @@ Instead of
   <button type="button" class="btn btn-default">Rigth</button>
 </div>
 ```
-----------
+
 **Button Group Vertical**
 ---------------------------------------
 ```
@@ -250,7 +247,7 @@ Instead of
   <button type="button" class="btn btn-default">Left</button>
 </div>
 ```
-----------
+
 **Button Group Vertical**
 ---------------------------------------
 ```
@@ -266,7 +263,7 @@ Instead of
   <button type="button" class="btn btn-default">Left</button>
 </div>
 ```
-----------
+
 **Alert**
 ---------------------------------------
 ```
@@ -276,5 +273,5 @@ Instead of
 ```
 <div class="alert alert-success">Content</div>
 ```
-----------
+
 
