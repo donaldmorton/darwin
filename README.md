@@ -72,24 +72,29 @@ Instead of
 
 **Columns**
 ---------------------------------------
-* @type
-* @size
-* @offset (optional)
+* @xs
+* @sm
+* @md
+* @lg
+* @xs-of
+* @sm-of
+* @md-of
+* @lg-of
 ```
-<cl type="md" size="2"></cl>
+<cl sx="6" md="4"></cl>
 ```
 Instead of
 ```
-<div class="col-md-2"></div>
+<div class="col-xs-6 col-md-4"></div>
 ```
 ----------
 offset
 ```
-<cl type="md" size="2" offset="2"></cl>
+<cl xs="6" sx-of="1" md="4" md-of="2"></cl>
 ```
 Instead of
 ```
-<div class="col-md-2 col-md-offset-2"></div>
+<div class="col-xs-6 col-sx-offset-1 col-md-4 col-md-offset-2"></div>
 ```
 
 **Panel**
