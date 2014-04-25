@@ -90,11 +90,11 @@ Instead of
 ----------
 offset
 ```
-<cl xs="6" sx-of="1" md="4" md-of="2"></cl>
+<cl xs="6" xs-of="1" md="4" md-of="2"></cl>
 ```
 Instead of
 ```
-<div class="col-xs-6 col-sx-offset-1 col-md-4 col-md-offset-2"></div>
+<div class="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-2"></div>
 ```
 
 **Panel**
