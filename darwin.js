@@ -33,15 +33,40 @@ darwin.directive('cl',function(){
 		restrict:'E',
 		transclude:true,
 		scope: {
-			type:'@',
-			size:'@',
-			offset:'@'
+			xs:'@',
+			sm:'@',
+			md:'@',
+			lg:'@',
+			xsOf:'@',
+			smOf:'@',
+			mdOf:'@',
+			lgOf:'@'
 		},
 		template:'<div ng-transclude></div>',
 		link: function(scope,element,attrs){
-			element.addClass('col-'+attrs.type+'-'+attrs.size);
-			if(attrs.offset){
-				element.addClass('col-'+attrs.type+'-offset-'+attrs.offset)
+			if(attrs.xs){
+				element.addClass('col-xs-'+attrs.xs)
+			}
+			if(attrs.sm){
+				element.addClass('col-sm-'+attrs.sm)
+			}
+			if(attrs.md){
+				element.addClass('col-md-'+attrs.md)
+			}
+			if(attrs.lg){
+				element.addClass('col-lg-'+attrs.lg)
+			}
+			if(attrs.xsOf){
+				element.addClass('col-xs-offset-'+attrs.xsOf)
+			}
+			if(attrs.smOf){
+				element.addClass('col-sm-offset-'+attrs.smOf)
+			}
+			if(attrs.mdOf){
+				element.addClass('col-md-offset-'+attrs.mdOf)
+			}
+			if(attrs.lgOf){
+				element.addClass('col-lg-offset-'+attrs.lgOf)
 			}
 		}
 	}
