@@ -21,10 +21,7 @@ darwin.directive('row',function(){
 	return {
 		restrict:'E',
 		transclude:true,
-		template:'<div ng-transclude></div>',
-		link: function(scope,element){
-			element.addClass('row');
-		}
+		template:'<div class="row" ng-transclude></div>'
 	}
 });
 
