@@ -223,7 +223,6 @@ darwin.directive('listGroup',function(){
 		link: function(scope,element,attrs){
 	        var childrens = element.children().children();
             angular.forEach(childrens, function(elem) {
-            	console.log(angular.element(elem));
             	active = angular.element(elem).hasClass('active')?'active':'';
             	angular.element(elem).addClass('list-group-item '+active);
             });
