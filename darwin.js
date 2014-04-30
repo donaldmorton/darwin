@@ -21,10 +21,7 @@ darwin.directive('row',function(){
 	return {
 		restrict:'E',
 		transclude:true,
-		template:'<div ng-transclude></div>',
-		link: function(scope,element){
-			element.addClass('row');
-		}
+		template:'<div class="row" ng-transclude></div>'
 	}
 });
 
@@ -223,7 +220,6 @@ darwin.directive('listGroup',function(){
 		link: function(scope,element,attrs){
 	        var childrens = element.children().children();
             angular.forEach(childrens, function(elem) {
-            	console.log(angular.element(elem));
             	active = angular.element(elem).hasClass('active')?'active':'';
             	angular.element(elem).addClass('list-group-item '+active);
             });
