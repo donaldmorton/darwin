@@ -244,3 +244,11 @@ darwin.directive('alert',function(){
 		}
 	}
 });
+darwin.directive('pageHeader', function () {
+    return {
+        restrict: 'E',
+        scope: false,
+        transclude: true,
+        template: '<div class="page-header"><h1 ng-transclude></h1></div>'
+    }
+});
