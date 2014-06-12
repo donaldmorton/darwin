@@ -252,3 +252,44 @@ darwin.directive('pageHeader', function () {
         template: '<div class="page-header"><h1 ng-transclude></h1></div>'
     }
 });
+darwin.directive('progressBar', function () {
+    return {
+        restrict: 'E',
+        scope: {
+            type: '@'
+        },
+        template: '\
+        <div class="progress">\
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">\
+                <span></span>\
+            </div>\
+        </div>',
+        link: function (scope, element, attrs) {
+
+            var progressBarWrapper = element.children();
+            var progressBarElement = progressBarWrapper.children();
+            var labelElement = progressBarElement.children();
+
+            if (attrs.max) {
+                progressBarElement.attr('aria-valuemax', attrs.max);
+            }
+
+            if (attrs.current) {
+                progressBarElement.attr('aria-valuenow', attrs.current);
+                progressBarElement.css("width", attrs.current + "%");
+            }
+
+            if (attrs.animate) {
+                progressBarWrapper.addClass("active");
+            }
+
+            if (attrs.striped) {
+                progressBarWrapper.addClass("progress-striped");
+            }
+
+            if (attrs.label) {
+                labelElement.html(attrs.label);
+            }
+        }
+    }
+});
