@@ -234,7 +234,8 @@ darwin.directive('alert',function(){
 		scope:{
 			type:'@'
 		},
-		template:'<div></div>',
+		transclude: true,
+		template:'<div ng-transclude></div>',
 		link: function(scope,element,attrs){
 			element.children().addClass('alert');
 			if(attrs.type){
