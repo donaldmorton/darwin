@@ -236,7 +236,7 @@ darwin.directive('alert',function(){
 		},
 		template:'<div></div>',
 		link: function(scope,element,attrs){
-			element.addClass('alert');
+			element.children().addClass('alert');
 			if(attrs.type){
 				element.children().addClass('alert-'+attrs.type);
 			}
