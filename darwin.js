@@ -234,11 +234,7 @@ darwin.directive('alert',function(){
 		scope:{
 			type:'@'
 		},
-<<<<<<< HEAD
-        transclude: true,
-=======
 		transclude: true,
->>>>>>> 927c4fd51dffccf395de9371cf52e76d287c48b1
 		template:'<div ng-transclude></div>',
 		link: function(scope,element,attrs){
 			element.children().addClass('alert');
@@ -247,13 +243,4 @@ darwin.directive('alert',function(){
 			}
 		}
 	}
-});
-
-darwin.directive('pageHeader', function () {
-    return {
-        restrict: 'E',
-        scope: false,
-        transclude: true,
-        template: '<div class="page-header"><h1 ng-transclude></h1></div>'
-    }
 });
