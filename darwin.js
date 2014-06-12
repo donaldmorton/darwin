@@ -293,3 +293,52 @@ darwin.directive('progressBar', function () {
         }
     }
 });
+darwin.directive('modal', function () {
+    return {
+        restrict: 'E',
+        scope: {
+            type: '@'
+        },
+        transclude: true,
+        template: '\
+        <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">\
+            <div class="modal-dialog">\
+                <div class="modal-content">\
+                    <div class="modal-header">\
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\
+                        <h4 class="modal-title"></h4>\
+                    </div>\
+                    <div class="modal-body" ng-transclude>\
+                    </div>\
+                    <div class="modal-footer">\
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
+                        <button type="button" class="btn btn-primary"></button>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>',
+        link: function (scope, element, attrs) {
+            var modalWrapper = element.children();
+            var modalDialog = modalWrapper.children();
+            var modalContent = modalDialog.children();
+            var modalHeader = modalContent.children().eq(0);
+            var modalHeaderH4 = modalHeader.children().eq(1);
+            var modalFooter = modalContent.children().eq(2);
+            var modalFooterButton = modalFooter.children().eq(1);
+
+            if (attrs.myid) {
+                modalWrapper.attr('id', attrs.myid);
+                modalWrapper.attr('aria-labelledby', attrs.myid + "Label");
+                modalHeaderH4.attr('id', attrs.myid + "Label");
+            }
+
+            if (attrs.title) {
+                modalHeaderH4.html(attrs.title);
+            }
+
+            if (attrs.buttontext) {
+                modalFooterButton.html(attrs.buttontext);
+            }
+        }
+    }
+});
