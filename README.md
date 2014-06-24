@@ -281,4 +281,54 @@ Instead of
 <div class="alert alert-success">Content</div>
 ```
 
+**Page Header**
+---------------------------------------
+```
+<page-header>Content</page-header>
+```
+Instead of
+```
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+```
 
+**Progress Bar**
+---------------------------------------
+```
+<progress-bar max="100" current="85" animate="true" striped="true"></progress-bar>
+```
+Instead of
+```
+<div class="progress progress-striped active">
+  <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+    <span class="sr-only">45% Complete</span>
+  </div>
+</div>
+```
+
+**Modals**
+---------------------------------------
+```
+<modal myid="myDarwinModal" title="My Modal Title" buttontext="This is awesome!">This is my modals content.</modal>
+```
+Instead of
+```
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+```

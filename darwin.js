@@ -234,12 +234,111 @@ darwin.directive('alert',function(){
 		scope:{
 			type:'@'
 		},
-		template:'<div></div>',
+		transclude: true,
+		template:'<div ng-transclude></div>',
 		link: function(scope,element,attrs){
-			element.addClass('alert');
+			element.children().addClass('alert');
 			if(attrs.type){
 				element.children().addClass('alert-'+attrs.type);
 			}
 		}
 	}
+});
+darwin.directive('pageHeader', function () {
+    return {
+        restrict: 'E',
+        scope: false,
+        transclude: true,
+        template: '<div class="page-header"><h1 ng-transclude></h1></div>'
+    }
+});
+darwin.directive('progressBar', function () {
+    return {
+        restrict: 'E',
+        scope: {
+            type: '@'
+        },
+        template: '\
+        <div class="progress">\
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">\
+                <span></span>\
+            </div>\
+        </div>',
+        link: function (scope, element, attrs) {
+
+            var progressBarWrapper = element.children();
+            var progressBarElement = progressBarWrapper.children();
+            var labelElement = progressBarElement.children();
+
+            if (attrs.max) {
+                progressBarElement.attr('aria-valuemax', attrs.max);
+            }
+
+            if (attrs.current) {
+                progressBarElement.attr('aria-valuenow', attrs.current);
+                progressBarElement.css("width", attrs.current + "%");
+            }
+
+            if (attrs.animate) {
+                progressBarWrapper.addClass("active");
+            }
+
+            if (attrs.striped) {
+                progressBarWrapper.addClass("progress-striped");
+            }
+
+            if (attrs.label) {
+                labelElement.html(attrs.label);
+            }
+        }
+    }
+});
+darwin.directive('modal', function () {
+    return {
+        restrict: 'E',
+        scope: {
+            type: '@'
+        },
+        transclude: true,
+        template: '\
+        <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">\
+            <div class="modal-dialog">\
+                <div class="modal-content">\
+                    <div class="modal-header">\
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\
+                        <h4 class="modal-title"></h4>\
+                    </div>\
+                    <div class="modal-body" ng-transclude>\
+                    </div>\
+                    <div class="modal-footer">\
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
+                        <button type="button" class="btn btn-primary"></button>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>',
+        link: function (scope, element, attrs) {
+            var modalWrapper = element.children();
+            var modalDialog = modalWrapper.children();
+            var modalContent = modalDialog.children();
+            var modalHeader = modalContent.children().eq(0);
+            var modalHeaderH4 = modalHeader.children().eq(1);
+            var modalFooter = modalContent.children().eq(2);
+            var modalFooterButton = modalFooter.children().eq(1);
+
+            if (attrs.myid) {
+                modalWrapper.attr('id', attrs.myid);
+                modalWrapper.attr('aria-labelledby', attrs.myid + "Label");
+                modalHeaderH4.attr('id', attrs.myid + "Label");
+            }
+
+            if (attrs.title) {
+                modalHeaderH4.html(attrs.title);
+            }
+
+            if (attrs.buttontext) {
+                modalFooterButton.html(attrs.buttontext);
+            }
+        }
+    }
 });
