@@ -2,7 +2,7 @@ darwin
 ======
 
 
-AngularJS directives for Boostrap fast protoyping
+AngularJS directives for Bootstrap fast prototyping
 
 Installation
 ---------------------------------------
